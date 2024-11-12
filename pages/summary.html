@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>สรุปข้อมูลการทำภารกิจ</title>
+    <style>
+        /* ส่วนของ CSS */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            flex-direction: column;
+            overflow-x: hidden;
+        }
+
+        h1 {
+            font-size: 3em;
+            color: #333;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .summary-container {
+            background: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            padding: 40px;
+            width: 80%;
+            max-width: 900px;
+            text-align: center;
+            animation: slideIn 1s ease-out;
+        }
+
+        .summary-container p, .summary-container label {
+            font-size: 1.5em;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .summary-container ul {
+            text-align: left;
+            font-size: 1.2em;
+            color: #333;
+            list-style-type: none;
+            padding: 0;
+            margin-top: 20px;
+            line-height: 1.8;
+        }
+
+        .summary-container li {
+            margin: 15px 0;
+        }
+
+        .input-field {
+            width: 100%;
+            padding: 10px;
+            font-size: 1.2em;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            box-sizing: border-box;
+        }
+
+        /* การตกแต่งปุ่ม */
+        .reset-btn {
+            background-color: #28a745;
+            color: white;
+            padding: 15px 30px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            margin-top: 30px;
+        }
+
+        .reset-btn:hover {
+            background-color: #218838;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .reset-btn:active {
+            transform: translateY(2px);
+            box-shadow: none;
+        }
+
+        /* แอนิเมชัน */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(30px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        /* ทำให้หน้าโหลดได้อย่างรวดเร็วและสะดวก */
+        .loading {
+            font-size: 1.5em;
+            color: #333;
+            text-align: center;
+            display: none;
+        }
+
+        .loading.show {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <h1>สรุปข้อมูลการทำภารกิจ</h1>
+    <div class="summary-container">
+        <p>คุณได้ทำภารกิจครบทั้ง 5 จุด! ยินดีด้วยค่ะ/ครับ</p>
+
+        <p>จากการเยี่ยมชมแต่ละสถานที่, คุณได้รับความรู้และข้อมูลสำคัญเกี่ยวกับชุมชนท้องถิ่นดังนี้:</p>
+
+        <ul>
+            <li><strong>แหล่งความรู้ที่1 วัดทำขวัญเมือง:</strong> วัดทำขวัญเมืองเป็นหนึ่งในสถานที่สำคัญทางประวัติศาสตร์ของชุมชน มีประวัติอันยาวนานเกี่ยวกับพิธีกรรมการทำขวัญและประเพณีที่สืบทอดมาจากบรรพบุรุษ ภายในวัดมีโบราณสถานและศิลปะที่แสดงถึงศรัทธาและความเชื่อของชาวบ้าน นักท่องเที่ยวจะได้เรียนรู้เกี่ยวกับวิธีการเก็บหลักฐานทางประวัติศาสตร์ เช่น การสำรวจโบราณสถานและการศึกษาอักษรจารึกที่พบในบริเวณวัด ทำให้สามารถเข้าใจเรื่องราวของชุมชนผ่านหลักฐานทางโบราณคดีและเรื่องเล่า.</li>
+        
+            <li><strong>แหล่งความรู้ที่2 วัดแหลมปอ:</strong> วัดแหลมปอเป็นวัดเก่าแก่ที่มีความสำคัญทั้งทางศาสนาและวัฒนธรรม ตั้งอยู่ในพื้นที่ที่มีทิวทัศน์สวยงามริมทะเล ทำให้ที่นี่เป็นจุดเชื่อมโยงระหว่างประวัติศาสตร์ท้องถิ่นกับธรรมชาติ การเยี่ยมชมวัดแหลมปอช่วยให้เราเข้าใจการพัฒนาชุมชนที่เกี่ยวข้องกับศาสนา โดยเฉพาะการทำบุญและพิธีกรรมที่มีบทบาทสำคัญในการเสริมสร้างความสัมพันธ์ในชุมชน ชาวบ้านยังคงสืบทอดประเพณีนี้จากรุ่นสู่รุ่น ทำให้วัดแหลมปอเป็นสัญลักษณ์ของความกลมเกลียวและความศรัทธาที่มั่นคง.</li>
+        
+            <li><strong>แหล่งความรู้ที่3 ตลาดสวี:</strong> ตลาดสวีเป็นศูนย์กลางของการค้าขายในอดีตที่มีบทบาทสำคัญในชุมชน ที่นี่ไม่เพียงเป็นที่แลกเปลี่ยนสินค้า แต่ยังเป็นสถานที่พบปะของชาวบ้านในการแลกเปลี่ยนความรู้และเรื่องราวทางประวัติศาสตร์ นักท่องเที่ยวสามารถสัมผัสถึงบรรยากาศของตลาดแบบดั้งเดิมและเข้าใจถึงอิทธิพลของการค้าต่อสังคมท้องถิ่นในอดีต การเรียนรู้เกี่ยวกับวิถีชีวิตและสินค้าท้องถิ่น เช่น อาหารพื้นเมืองและผลิตภัณฑ์หัตถกรรม ทำให้เรามองเห็นความสัมพันธ์ระหว่างเศรษฐกิจและวัฒนธรรมของชุมชน.</li>
+        
+            <li><strong>แหล่งความรู้ที่4 พิพิธภัณฑ์พระธาตุสวี:</strong> พิพิธภัณฑ์พระธาตุสวีเก็บรักษาและจัดแสดงโบราณวัตถุและวัตถุโบราณที่สะท้อนประวัติศาสตร์และมรดกทางวัฒนธรรมของท้องถิ่น ภายในพิพิธภัณฑ์มีการจัดแสดงพระธาตุสวี ซึ่งเป็นสิ่งศักดิ์สิทธิ์ที่ชาวบ้านเคารพบูชา และมีการศึกษาที่เกี่ยวข้องกับการอนุรักษ์ศิลปะและวัฒนธรรมในชุมชน นอกจากนี้ยังมีข้อมูลเกี่ยวกับชนเผ่าพื้นเมืองที่เคยอาศัยอยู่ในพื้นที่นี้ ทำให้พิพิธภัณฑ์เป็นแหล่งเรียนรู้ที่ครอบคลุมถึงความหลากหลายของสังคมและความสำคัญของการอนุรักษ์วัฒนธรรม.</li>
+        
+            <li><strong>แหล่งความรู้ที่5 วัดพระธาตุสวี:</strong> วัดพระธาตุสวีเป็นศูนย์รวมจิตใจของชุมชนที่เชื่อมโยงภูมิศาสตร์และประวัติศาสตร์เข้าด้วยกัน วัดตั้งอยู่บนเนินเขาที่สามารถมองเห็นทัศนียภาพที่สวยงาม ทำให้เป็นสถานที่ท่องเที่ยวที่สำคัญและมีความเชื่อมโยงกับการพัฒนาเมืองในยุคต่าง ๆ วัดพระธาตุสวีมีศิลปะและสถาปัตยกรรมที่สะท้อนถึงการผสมผสานระหว่างวัฒนธรรมของชนชาติต่าง ๆ ที่มีอิทธิพลในอดีต นักท่องเที่ยวสามารถศึกษาประวัติศาสตร์ของพื้นที่และเข้าใจถึงความเชื่อทางศาสนาที่มีบทบาทในการกำหนดวิถีชีวิตของชุมชน.</li>
+        </ul>
+        
+
+        <label for="favorite-location">แหล่งเรียนรู้ประวัติศาสตร์ศาสตรที่ชื่นชอบที่สุด (เพราะอะไร):</label>
+        <input type="text" id="favorite-location" class="input-field" placeholder="พิมพ์คำตอบของคุณที่นี่">
+
+        <label for="other-locations">ถ้ามีแหล่งเรียนรู้อื่น ๆ ที่นักเรียนสนใจจะศึกษาเพิ่มเติม, นักเรียนจะศึกษาด้วยวิธีใด:</label>
+        <input type="text" id="other-locations" class="input-field" placeholder="พิมพ์คำตอบของคุณที่นี่">
+
+        <label for="reflection">หลังจากเสร็จสิ้นภารกิจ, นักเรียนมีความรู้สึกอย่างไรเกี่ยวกับการเรียนรู้ประวัติศาสตร์:</label>
+        <input type="text" id="reflection" class="input-field" placeholder="พิมพ์คำตอบของคุณที่นี่">
+
+        <p>จากภารกิจนี้, คุณได้เรียนรู้วิธีการทำงานทางประวัติศาสตร์และวิธีการเก็บรวบรวมข้อมูลที่สำคัญในอดีตเพื่อสานต่อความรู้ให้กับคนรุ่นใหม่.</p>
+        <button class="reset-btn" onclick="resetGame()">เริ่มเกมใหม่</button>
+    </div>
+
+    <script>
+        function resetGame() {
+            localStorage.removeItem('completedLocations');  
+            window.location.href = 'map.html';
+        }
+
+        // การแสดงผลแบบอินเตอร์แอคทีฟ (แสดงข้อความโหลดชั่วคราว)
+        window.addEventListener("DOMContentLoaded", () => {
+            document.querySelector('.loading').classList.remove('show');
+        });
+    </script>
+</body>
+</html>

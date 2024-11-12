@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>เกม เส้นทางประวัติศาสตร์ - พระธาตุสวี</title>
+    <style>
+        /* Basic styling for the intro page */
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            background: linear-gradient(135deg, #66b3ff, #ff99cc);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .container {
+            max-width: 700px;
+            padding: 30px;
+            border-radius: 12px;
+            background-color: #fff;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 1.5s ease-out;
+            transform: translateY(30px);
+        }
+
+        h1 {
+            font-size: 2.5em;
+            color: #333;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+            animation: slideInFromTop 1s ease-out;
+        }
+
+        p {
+            color: #666;
+            font-size: 1.2em;
+            margin-bottom: 30px;
+            line-height: 1.6;
+            animation: fadeInText 1.5s ease-out;
+        }
+
+        /* Button Styling */
+        .start-btn {
+            padding: 15px 30px;
+            font-size: 1.5em;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+        }
+
+        .start-btn:hover {
+            background-color: #45a049;
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .start-btn:active {
+            transform: scale(0.98);
+        }
+
+        .start-btn:focus {
+            outline: none;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInFromTop {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInText {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>เกม เส้นทางประวัติศาสตร์ - พระธาตุสวี</h1>
+        <p>ยินดีต้อนรับสู่เส้นทางประวัติศาสตร์ที่น่าตื่นเต้น! ภารกิจของคุณคือการเยี่ยมชมแหล่งความรู้ทั้ง 5 สถานที่ในแผนที่ กดที่แต่ละจุดเพื่อเรียนรู้เกี่ยวกับสถานที่นั้น และตอบคำถามให้ครบ</p>
+        <p>เมื่อคุณผ่านทั้ง 5 แหล่งความรู้ ระบบจะนำคุณไปยังหน้าสรุปความรู้ทั้งหมด</p>
+        <button class="start-btn" onclick="startGame()">เริ่มเกม</button>
+    </div>
+
+    <script>
+        function startGame() {
+            // Adding a small delay and a loading animation before redirecting
+            let button = document.querySelector('.start-btn');
+            button.innerText = "กำลังโหลด...";
+            button.style.backgroundColor = "#3e8e41";  // Change button color to indicate loading
+            button.style.cursor = "wait";
+
+            setTimeout(function () {
+                window.location.href = "map.html"; // Link to map page with interactive points
+            }, 1000); // Delay for 1 second before navigating
+        }
+    </script>
+</body>
+</html>
